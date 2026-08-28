@@ -3,7 +3,13 @@ const {registerUser,getAllUser} = require("./modules/users/users.route")
 
 function buildApp(){
     const app = Fastify({
-        logger:true
+        
+        logger:true,
+            ajv: {
+        customOptions: {
+            removeAdditional: false
+        }
+    }
     })
     app.get("/health",async()=>{
         return{
