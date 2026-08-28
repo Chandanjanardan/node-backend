@@ -1,16 +1,12 @@
 const {userSchema} = require("./users.schema")
-const {createUserController} = require("./users.controller")
+const {createUserController,getUserController} = require("./users.controller")
 function registerUser(app){
     app.post("/user/register",userSchema,createUserController)
 }
 
 function getAllUser(app){
-    app.get("/users",async(request,reply)=>{
-        const users=[]
-        return reply.code(200).send({
-            users
-        })
-    })
+    app.get("/users",getUserController)
+    
 }
 
-module.exports ={registerUser,getAllUser}
+module.exports ={registerUser,getAllUser};

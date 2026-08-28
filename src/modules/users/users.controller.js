@@ -5,6 +5,12 @@ async function createUserController(request,reply){
     })
 }
 
+
+async function getUserController(request,reply){
+    const users =[]
+    return reply.code(200).send({users})
+}
+
 module.exports={
-    createUserController
+    createUserController,getUserController
 }

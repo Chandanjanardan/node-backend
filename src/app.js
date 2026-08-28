@@ -20,4 +20,4 @@ function buildApp(){
     app.register(getAllUser)
     return app
 }
-module.exports = buildApp
+module.exports = buildApp;
