@@ -24,7 +24,9 @@ test("test create user endpoint",async(t)=>{
     t.after(()=>app.close())
     const body ={
         email:"test@example.com",
-        name:"test"
+        name:"test",
+        age:21,
+       
     }
     const response = await app.inject({
         method:"POST",

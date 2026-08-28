@@ -1,9 +1,7 @@
 const {userSchema} = require("./users.schema")
+const {createUserController} = require("./users.controller")
 function registerUser(app){
-    app.post("/user/register",userSchema,async(request,reply)=>{
-        const data = request.body
-        return reply.code(201).send({user:data})
-    })
+    app.post("/user/register",userSchema,createUserController)
 }
 
 function getAllUser(app){
