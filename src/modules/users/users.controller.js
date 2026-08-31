@@ -1,7 +1,8 @@
+const {createUserService} = require("./users.service.js")
 async function createUserController(request,reply){
-    const user = request.body   
+    const createdUser = await createUserService(request.body)
     return reply.code(201).send({
-        user
+        user:createdUser
     })
 }
 
