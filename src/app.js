@@ -4,11 +4,11 @@ const {registerUser,getAllUser} = require("./modules/users/users.route")
 function buildApp(){
     const app = Fastify({
         logger:true,
-       ajv:{
-       customOptions: {
-            removeAdditional: false
+        ajv: {
+            customOptions: {
+                removeAdditional: false
+            }
         }
-       }
     })
     app.get("/health",async()=>{
         return{
@@ -19,4 +19,4 @@ function buildApp(){
     app.register(getAllUser)
     return app
 }
-module.exports = buildApp
+module.exports = buildApp;

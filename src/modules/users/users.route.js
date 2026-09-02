@@ -8,4 +8,4 @@ function getAllUser(app){
     app.get("/users",getUserController)
 }
 
-module.exports ={registerUser,getAllUser}
+module.exports ={registerUser,getAllUser};
