@@ -3,6 +3,7 @@ const userSchema ={
         body:{
             type:"object",
             required:["email","name"],
+            additionalProperties:false,
             properties:{
                 name:{type:"string",minLength:3},
                 age:{type:"integer"},
